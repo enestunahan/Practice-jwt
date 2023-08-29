@@ -15,6 +15,7 @@ namespace Practice_jwt.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<UserRefreshToken>().HasKey(x => x.UserId);
             base.OnModelCreating(builder);
         }
     }
