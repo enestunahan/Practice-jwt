@@ -47,9 +47,9 @@ namespace Practice_jwt.Concrete
         {
             var userList = new List<Claim>()
             {
-                new Claim(ClaimTypes.NameIdentifier , userApp.Id),
+               // new Claim(ClaimTypes.NameIdentifier , userApp.Id),
                 new Claim(JwtRegisteredClaimNames.Email, userApp.Email),
-                new Claim(ClaimTypes.Name,userApp.UserName),
+               // new Claim(ClaimTypes.Name,userApp.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti , Guid.NewGuid().ToString())  
             };
 

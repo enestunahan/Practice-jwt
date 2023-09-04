@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Practice_jwt.Abstract;
 using Practice_jwt.Concrete;
 using Practice_jwt.Models;
 using TokenOptions = Practice_jwt.Models.TokenOptions;
@@ -9,6 +10,8 @@ using TokenOptions = Practice_jwt.Models.TokenOptions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<ITokenService , TokenService>();
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
